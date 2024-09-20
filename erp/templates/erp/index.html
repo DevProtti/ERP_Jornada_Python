@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Página inicial - ERP</title>
+</head>
+<body>
+    <h1>Página inicial do projeto ERP</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit"><a href="{% url 'erp:login' %}">Login</a></button>
+    </form>
+
+</body>
+</html>

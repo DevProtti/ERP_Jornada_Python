@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualiza cadastro de venda - ERP</title>
+</head>
+<body>
+    {% if venda %}
+        <h1>Atualiza cadastro de venda id {{venda.id}}</h1>
+        <form method="post">
+            {% csrf_token %}
+
+            {{form}}
+
+            <button type="submit">Atualizar</button>
+        </form>
+    {% else %}
+        <h1>Venda com ID {{venda.id}} não encontrada</h1>
+    {% endif %}
+</body>
+</html>

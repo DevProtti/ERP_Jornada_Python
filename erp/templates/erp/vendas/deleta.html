@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deleção de venda - ERP</title>
+</head>
+<body>
+    {% if venda %}
+        <form method="post">
+            {% csrf_token %}
+            <h1>Deleção de venda</h1>
+            <ul>
+                <li><b>ID da venda:</b>{{ venda.id }}</li>
+                <li><b>Realizada por:</b>{{ venda.funcionario }}</li>
+                <li><b>Data:</b>{{ venda.data_hora }}</li>
+                <li><b>Produto:</b>{{ venda.produto }}</li>
+            </ul>
+            <p>Você confirma a deleção dessa venda?</p>
+            <button type="submit">Confirmar</button>
+        </form>
+    {% else %}
+        <h1>ID de venda {{ venda.id }} inexistente</h1>
+    {% endif %}
+</body>
+</html>

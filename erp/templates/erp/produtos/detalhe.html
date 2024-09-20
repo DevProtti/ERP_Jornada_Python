@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do produto - ERP</title>
+</head>
+<body>
+    {% if produto %}
+        <h1>Detalhes do produto</h1>
+        {% if produto.imagem %}
+            <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" width="400px">
+        {% else %}
+            <img src="" alt="{{ produto.nome }}" width="400px">
+        {% endif %}
+        <ul>
+            <li><b>Nome: </b> {{ produto.nome }}</li>
+            <li><b>Descrição:</b> {{ produto.descricao }}</li>
+            <li><b>Preço:</b> {{ produto.preco }}</li>
+        </ul>
+    {% else %}
+        <h1>Produto com esse ID não encontrado!</h1>
+    {% endif %}
+</body>
+</html>

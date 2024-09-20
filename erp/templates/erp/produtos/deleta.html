@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deleção de produto - ERP</title>
+</head>
+<body>
+    {% if produto %}
+        <h1>Deleção do Produto: "{{ produto.nome }} {{ produto.descricao }}"</h1>
+        <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" width="400px">
+        <form method="post">
+            {% csrf_token %}
+
+            <p>Você confirma a deleção do produto "{{ produto.nome }} {{ produto.descricao }}" (id = {{ produto.id }})?</p>
+
+            <button type="submit">Confirmar deleção</button>
+        </form>
+    {% else %}
+        <h1>Produto com este id não encontrado</h1>
+    {% endif %}
+
+</body>
+</html>
